@@ -14,11 +14,14 @@
   <link 
     rel="stylesheet" 
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" 
+    rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
 
   <style>
     /* Fuente principal: Century Gothic (fallback a sans-serif) */
     body {
-      font-family: "Century Gothic",  'Franklin Gothic Medium';
+      font-family: "Montserrat",   sans-serif;
       margin: 0;
       background-color: #222;
       color: #f1f1f1;
@@ -190,6 +193,13 @@
       margin-bottom: 10px;
     }
 
+    
+    .event-box h2 {
+      font-size: 2rem;
+      color: #d4af37;
+      margin-bottom: 10px;
+    }
+
     .info-container p {
       font-size: 1.1rem;
       font-weight: 300;
@@ -211,7 +221,54 @@
       align-items: center;
       margin-bottom: -20px;
     }
+    /* Contenedor principal para "Dónde y Cuándo" */
+    .event-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    text-align: center;
+    max-width: 90%;
+    margin: auto;
+    flex-direction: row; /* Texto a la izquierda, mapa a la derecha */
+    }
 
+    /* Caja de información */
+    .event-box {
+    flex: 1;
+    padding: 25px; /* Un poco menos que antes */
+    background-color: #444;
+    border-radius: 10px;
+    min-width: 300px;
+    color: #fff;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+    font-size: 1.2rem; /* Reduce tamaño de texto para igualarlo */
+    }
+
+    /* Mapa ajustado */
+    .event-map {
+    flex: 1;
+    width: 100%;
+    height: 280px;
+    border-radius: 10px;
+    max-width: 400px; /* Ajuste de ancho */
+    }
+
+    /* Ícono grande */
+    .event-icon {
+    font-size: 3rem; /* Reducido para que coincida con otros */
+    color: #ccc;
+    display: block;
+    margin-bottom: 10px;
+    }
+
+    /* Resaltar texto en amarillo */
+    .event-highlight {
+    color: #d4af37;
+    font-weight: bold;
+    }
     /* Ajustes responsivos adicionales (opcional) */
     @media (max-width: 576px) {
       .countdown {
@@ -223,6 +280,13 @@
       }
       .countdown small {
         font-size: 0.9rem;
+      }
+      .event-container {
+    flex-direction: column; /* Se apila en móviles */
+    align-items: center;
+      }
+      .event-map {
+            max-width: 100%;
       }
     }
   </style>
@@ -292,26 +356,24 @@
 
 <!-- Dónde y Cuándo -->
 <section class="section-4 fade-in">
-  <div class="event-info">
-    <h2>¿Dónde y Cuándo?</h2>
-    <div class="event-details">
-      <div class="event-date">
-        <h3>🗓️ <strong><span>12 de abril del 2025</span></strong></h3>
-        <h3>🕒 <strong><span>18:30 hrs</span></strong></h3>
-      </div>
-      <div class="event-location">
-        <h3>📍 <span class="location-highlight">Casa Santa Lucia</span></h3>
+    <div class="event-container">
+      <div class="event-box">
+        <i class="fa-solid fa-location-dot event-icon"></i> <!-- Ícono de ubicación -->
+        <h2>¿Dónde y Cuándo?</h2>
+        <p><strong>📅 Fecha:</strong> 12 de abril del 2025</p>
+        <p><strong>🕒 Hora:</strong> 18:30 hrs</span></p>
+        <p><strong>📍 Lugar:</strong> <span class="event-highlight">Casa Santa Lucía</span></p>
         <p>3era calle 19-75 zona 8 de Mixco, San Cristobal II, sector B-4, Mixco, Guatemala, Guatemala.</p>
       </div>
+      <iframe 
+        class="event-map"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.191648127569!2d-90.58841860000001!3d14.5881528!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8589a0be1cb707b5%3A0x2e3b9c69d353d8cc!2sCasa%20Santa%20Lucia!5e0!3m2!1sen!2sgt!4v1740279325016!5m2!1sen!2sgt"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
     </div>
-    <iframe 
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.191648127569!2d-90.58841860000001!3d14.5881528!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8589a0be1cb707b5%3A0x2e3b9c69d353d8cc!2sCasa%20Santa%20Lucia!5e0!3m2!1sen!2sgt!4v1740279325016!5m2!1sen!2sgt"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-  </div>
-</section>
+  </section>
 
 <!-- Confirmación de asistencia -->
 <section class="section-5 fade-in">
